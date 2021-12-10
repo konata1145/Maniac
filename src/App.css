@@ -1,38 +1,86 @@
-.App {
-  text-align: center;
+.App{
+    font-family: sans-serif;
+    text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Board {
+    text-align: center;
+}
+.ManiaWrite{
+    margin: 0 auto;
+    width: 80%;
+    border: 3px solid rgb(0, 255, 221);
+    padding: 30px 30px 30px 30px;
+    border-radius: 20px;
+    margin-bottom: 30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.wrapper{
+    width: 80%;
+    margin: 0 auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.title{
+    width: 100px;
+    height: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    padding-left: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+.textArea{
+    width: 80%;
+    min-height: 300px;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.submit{
+    width: 150px;
+    height: 40px;
+    font-size: 16px;
+    padding : 10px;
+    border: 20px;
+    background: rgb(0, 255, 221);
+    border-radius: 5px;
+    margin-top: 40px;
+    vertical-align: middle;
+}
+
+.ck input.ck-input.ck-input-text{
+    transition-property: box-shadow, border;
+}
+
+.ck.ck-editor__editable:not(.ck-editor__nested-editable){
+    min-height: 400px;
+}
+
+.show-menu{
+    width: 376px;
+    height: 500px;
+    position: absolute;
+    left: 0px;
+    transition: 1s;
+}
+
+.hide-menu{
+    width: 376px;
+    height: 500px;
+    position: absolute;
+    left:-376px;
+    transition: 1s;
+}
+
+.openBoard{
+    width: 30px;
+    height: 30px;
+    font-size: large;
+    border-radius: 30px;
+    background-color: rgb(255,255,255);
+}
+
+.ImgEdit{
+    padding-left: 18px;
+    z-index: 1;
 }

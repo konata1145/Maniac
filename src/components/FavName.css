@@ -1,0 +1,29 @@
+.Name{
+    align-items: center;
+}
+
+.Main_name{
+    width: 100px;
+    height: 20px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.Sub_explain{
+    width: 300px;
+    height: 500px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.CreateBtn{
+    width: 70px;
+    height: 35px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    background-color: white;
+    border-color: white;
+}
+
