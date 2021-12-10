@@ -1,19 +1,25 @@
 import React, {useState, useRef} from 'react';
 import './App.css';
-import { CKEditor } from '@ckeditor/ckeditor5-react';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import parse from 'html-react-parser';
 import Navbar from './components/Navbar';
 import NavbarPlus from './components/NavbarPlus';
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import TuiImageEditor from "tui-image-editor";
 import List_add from "./components/List_add";
-import Modal from "./Modal";
+import Login from "./Login";
+import * as IoIcons from "react-icons/io"
+import AddFunc from "./AddFunc"
+//import Modal1 from "./Modal";
+//import "./modal.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {Button, Modal} from 'react-bootstrap';
+
 
 import "tui-image-editor/dist/tui-image-editor.css"
 import "tui-color-picker/dist/tui-color-picker.css"
 
 class ImageEditor extends React.Component {
+  
   rootEl = React.createRef();
   imageEditorInst = null;
 
@@ -33,6 +39,42 @@ class ImageEditor extends React.Component {
   }
 }
 
+class LoginModal extends React.Component{
+  render(){
+    return (
+      <div>
+      <Modal show = {true}>
+          <Modal.Header>LogIn Please</Modal.Header>
+          <Modal.Body>
+            <Login/>
+          </Modal.Body>
+          <Modal.Footer>
+          </Modal.Footer>
+        </Modal>
+        </div>
+    );
+  }
+}
+const AddBtn = () =>{
+  const [countList, setCountList] = useState([0])
+
+  const onAddFuncDiv = () =>{
+      let countArr = [...countList]
+      let counter = countArr.slice(-1)[0]
+      counter += 1
+      countArr.push(counter)
+      setCountList(countArr)
+  }
+return(
+<div>
+  <AddFunc countList = {countList}/>
+  <Button onClick = {onAddFuncDiv}>
+      <IoIcons.IoIosAddCircleOutline />
+  </Button>
+</div>
+)
+}
+
 
 
 function App() {
@@ -42,6 +84,7 @@ function App() {
   const openModal = () => {
     setModalOpen(true);
   };
+ 
   const closeModal = () => {
     setModalOpen(false);
   };
@@ -79,14 +122,18 @@ const props = {
     rotatingPointOffset: 70
   }
 };
-
+/*
+<div open = {openModal}></div>
+        <Modal open = {modalOpen} close = {closeModal} header = "로그인">
+        </Modal> 
+        */
   return (
       <div className = "Board">
         <h2>For Maniac</h2>
         <div className = 'ManiaWrite'>
           <h3>당신들이 찾던 그 취향, 취미들</h3>
-          <Router className = "gallery">
-          
+          <Router className = "gallery"> 
+          <AddBtn/>
             <List_add/>
             <NavbarPlus/>
             <Navbar/>

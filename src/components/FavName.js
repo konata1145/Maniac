@@ -5,7 +5,7 @@ class FavName extends React.Component {
 
  
     count = 0
-    state = {
+    state = {  //이 부분 db 만들어서 연결
         mainValue: "",
         subValue: ""
     };
